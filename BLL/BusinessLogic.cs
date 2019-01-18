@@ -40,6 +40,7 @@ namespace BLL
 
                 UserId = da.LoginKontrol(k);
                 ret = UserId;
+                k.Kid = UserId;
 
             }
             else
@@ -166,12 +167,17 @@ namespace BLL
             var mekan = da.MekanAl();
             return mekan;
         }
-
-        public string Girildi()
+        
+        public int Katil(int eid, int kid)
         {
-
-            return da.Girildi(UserId);
+            return da.Katil(eid, kid);
         }
+
+        //public string Girildi()
+        //{
+
+        //    return da.Girildi(UserId);
+        //}
     }
 
 

@@ -32,7 +32,6 @@
             this.buttonEtkinlik = new System.Windows.Forms.Button();
             this.buttonKatil = new System.Windows.Forms.Button();
             this.buttonMekan = new System.Windows.Forms.Button();
-            this.buttonGiris = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -76,16 +75,6 @@
             this.buttonMekan.UseVisualStyleBackColor = true;
             this.buttonMekan.Click += new System.EventHandler(this.buttonMekan_Click);
             // 
-            // buttonGiris
-            // 
-            this.buttonGiris.Location = new System.Drawing.Point(740, 12);
-            this.buttonGiris.Name = "buttonGiris";
-            this.buttonGiris.Size = new System.Drawing.Size(145, 27);
-            this.buttonGiris.TabIndex = 7;
-            this.buttonGiris.Text = "Giriş";
-            this.buttonGiris.UseVisualStyleBackColor = true;
-            this.buttonGiris.Click += new System.EventHandler(this.buttonGiris_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -103,7 +92,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.buttonGiris);
             this.Controls.Add(this.buttonMekan);
             this.Controls.Add(this.buttonKatil);
             this.Controls.Add(this.buttonEtkinlik);
@@ -123,7 +111,6 @@
         private System.Windows.Forms.Button buttonEtkinlik;
         private System.Windows.Forms.Button buttonKatil;
         private System.Windows.Forms.Button buttonMekan;
-        private System.Windows.Forms.Button buttonGiris;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

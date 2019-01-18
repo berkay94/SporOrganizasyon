@@ -27,10 +27,14 @@ namespace SporOrganizasyon
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            if (bl.LoginKontrol(txtKullanici.Text, txtSifre.Text) > 0)
+            int id = bl.LoginKontrol(txtKullanici.Text, txtSifre.Text);
+            if ( id > 0)
             {
                 
                 MessageBox.Show("Giriş Başarılı");
+                this.Hide();
+                AnaEkran anaEkran = new AnaEkran(txtKullanici.Text, id);
+                anaEkran.ShowDialog();
                 this.Close();
                
             }
@@ -44,6 +48,11 @@ namespace SporOrganizasyon
             this.Hide();
             form.ShowDialog();
             this.Show();
+        }
+
+        private void Giris_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

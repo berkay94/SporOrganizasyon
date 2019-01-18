@@ -16,8 +16,8 @@ namespace SporOrganizasyon
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            AnaEkran anaEkran = new AnaEkran();
-            anaEkran.Show();
+            Giris giris = new Giris();
+            giris.Show();
             Application.Run();
         }
     }

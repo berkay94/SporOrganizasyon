@@ -113,30 +113,30 @@ namespace DAL
             return kayitSayisi;
         }//Bitti
 
-        public string Girildi(int UserId)
-        {
+        //public string Girildi(int UserId)
+        //{
            
-            try
-            {
-                //var kullanici = con.ExecuteScalar<int>("SELECT IDENT_CURRENT('Kullanici')");
-                var user = con.Query<Kullanici>("Select * from Kullanici where isLogin=2 and Kid=@Kid",new {@Kid= UserId });
+        //    try
+        //    {
+        //        //var kullanici = con.ExecuteScalar<int>("SELECT IDENT_CURRENT('Kullanici')");
+        //        var user = con.Query<Kullanici>("Select * from Kullanici where isLogin=2 and Kid=@Kid",new {@Kid= UserId });
               
 
-                foreach (Kullanici item in user)
-                {
-                    return item.Ad;
-                }
+        //        foreach (Kullanici item in user)
+        //        {
+        //            return item.Ad;
+        //        }
                
 
-            }
-            catch (Exception ex)
-            {
-                Hata(ex);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Hata(ex);
 
-            }
+        //    }
 
-            return "";
-        }
+        //    return "";
+        //}
 
         public int EtkinlikAc(Etkinlikler e)
         {
@@ -267,6 +267,24 @@ namespace DAL
                 }
             }
         }//Bitti
+
+        public int Katil(int EtkinlikId,int UserId)
+        {
+            int kayitSayisi = 0;
+            try
+            {
+                string sql = "Insert Into Katilanlar Values(@Eid,@Kid)";
+                
+                kayitSayisi = con.Execute(sql, new { @Eid = EtkinlikId, @Kid = UserId });
+
+            }
+            catch (Exception ex)
+            {
+                Hata(ex);
+            }
+
+            return kayitSayisi;
+        }
     }
-    
+
 }

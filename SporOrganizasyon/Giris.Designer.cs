@@ -113,6 +113,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Giris";
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Giris_FormClosed);
             this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

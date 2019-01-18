@@ -13,11 +13,16 @@ namespace SporOrganizasyon
 {
     public partial class AnaEkran : Form
     {
+        public string Username { get; set; }
+        public int Userid { get; set; }
+
         BusinessLogic bl;
-        public AnaEkran()
+        public AnaEkran(string username, int userid)
         {
             InitializeComponent();
             bl = new BusinessLogic();
+            Username = username;
+            Userid = userid;
         }
 
         private void AnaEkran_Load(object sender, EventArgs e)
@@ -25,21 +30,12 @@ namespace SporOrganizasyon
            
             dataGridView1.DataSource = bl.EtkinlikAl();
             dataGridView1.Columns["EtkinlikId"].Visible = false;
-        }
-
-        private void buttonGiris_Click(object sender, EventArgs e)
-        {
-            Giris giris = new Giris();
-            this.Hide();
-            giris.ShowDialog();
-            labelGiris.Text = bl.Girildi();
-            
-            this.Show();
+            labelGiris.Text = Username;
         }
 
         private void AnaEkran_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void buttonMekan_Click(object sender, EventArgs e)
@@ -60,7 +56,9 @@ namespace SporOrganizasyon
 
         private void buttonKatil_Click(object sender, EventArgs e)
         {
+            bl.Katil(int.Parse(dataGridView1.SelectedRows[0].ToString()),Userid);
 
+            MessageBox.Show(dataGridView1.SelectedRows[0].ToString());
         }
     }
 }
